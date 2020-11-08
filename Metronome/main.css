@@ -53,30 +53,18 @@ body {
     border: 1px solid black;
 }
 
-.container-dial p {
+.control { 
     height: 150px;
     width: 150px;
     margin: 0 auto;
     margin-top: 25px;
+    margin-left: 75px; /* NEED THIS TO CENTER <button>, BUT NOT <p>; NOT SURE WHY*/
     background: cyan;
 
     border:  2px solid black;
     border-radius: 50%;
+    outline:  none;  /* THIS ONLY WORKED AFTER GIVING BUTTON A CLASS, AND TARGETING THE CSS OF THAT CLASS */
 }
-
-/* NOT WORKING.  CAN'T GET ON TOP OF OTHER CIRCLE
-
- .container-dial h6 {
-    height: 66px;
-    width: 66px;
-    margin: 0 auto;
-    margin-bottom: 44px;
-    background-color: blueviolet;
-
-    border: 2px solid black;
-    border-radius: 50%;
-}
-*/
 
 .container-controls-background {
     height: 100px;
@@ -97,6 +85,7 @@ body {
     background-color: blueviolet;
     border: 2px solid black;
     border-radius: 0 10px 10px 0;
+    outline: none;
     font-size: 1.2em;
 }
 
@@ -111,6 +100,7 @@ body {
     background-color: blueviolet;
     border: 2px solid black;
     border-radius: 10px 0 0 10px;
+    outline:  none;
     font-size: 1.2em;
 }
 
@@ -121,3 +111,18 @@ body {
     border: 1px solid black;
     border-radius: 0 0 10px 10px;
 }
+
+
+/* NOT WORKING.  CAN'T GET ON TOP OF OTHER CIRCLE
+
+ .container-dial h6 {
+    height: 66px;
+    width: 66px;
+    margin: 0 auto;
+    margin-bottom: 44px;
+    background-color: blueviolet;
+
+    border: 2px solid black;
+    border-radius: 50%;
+}
+*/

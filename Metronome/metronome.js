@@ -4,34 +4,48 @@ const AudioContext = window.AudioContext || webkitAudioContext;
 const minusTempo = document.querySelector('.minus');
 const increaseTempo = document.querySelector('.plus');
 const tempoDisplay = document.querySelector('.container-display p');
-const tempoOutput = document.querySelector('.container-dial p');
+const tempoOutput = document.querySelector('.container-dial button');
+const startStopButton = document.querySelector('.control');
 
 var tempo = 40;
-var msTempo = tempo * 1000;
-var sec = 60;
+var bpm = (tempo / 60) * 1000;
 
-var bpm = tempo/sec;
 var interval;
 
-// START METRNOME - DISPLAYS, BUT TIMING ISN'T RIGHT; PROBABLY SOMETHING TO DO WITH displayControl()
+// START METRONOME - DISPLAYS, BUT TIMING ISN'T RIGHT; PROBABLY SOMETHING TO DO WITH control()
 function start() {
-    interval = setInterval(displayControl, 4000);  //  BPM CALCULATION IS WRONG - THIS PRODUCES A CLOSER RESULT
+    if (!interval) {
+        interval = setInterval(control, 1000);  //  BPM CALCULATION IS WRONG - THIS PRODUCES A CLOSER RESULT
+        console.log(tempo);
+        console.log(bpm);
+    } 
 }
 
 // STOP METRONOME; CLEAR DISPLAY
 function stop() {
     clearInterval(interval);
-    tempoOutput.innerHTML = '';
 }
 
 // FUNCTION TO CONTROL tempoOutput INTERVAL
-function displayControl() {
-    if (tempoOutput.innerHTML == '') {
-        tempoOutput.innerHTML = 'beep';
+function control() {
+    if (tempoOutput.innerHTML != '') {
+        tempoOutput.style.backgroundColor = "blueviolet";
+        tempoOutput.innerHTML = ''; 
     } else {
-        tempoOutput.innerHTML = '';
+        tempoOutput.style.backgroundColor = "cyan";
+        tempoOutput.innerHTML = 'click me';
     }
 }
+
+/*  NEEDS WORK!
+startStopButton.addEventListener("click", function() {
+    if (!interval) {
+        start();
+    } else {
+        stop();
+    }
+})
+*/
 
 // BUTTON TO DECREASE TEMPO
 minusTempo.addEventListener("click", function(){

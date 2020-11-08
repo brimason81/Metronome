@@ -1,0 +1,12 @@
+11/5/2020
+
+- Made .control button circular
+- Revised bpm calculation
+- Created control() - this method is called from start(), and changes the background color, and 
+                        innerHTML of the button 
+
+TO DO:
+
+- Change shape of button - triangle (play); square (stop).  Use method to make these changes
+- Double-check bpm calculation:  The interval at which the color changes is not correct.
+- bpm calculation needs to change as the tempo is raised/lowered.
