@@ -8,5 +8,19 @@
 TO DO:
 
 - Change shape of button - triangle (play); square (stop).  Use method to make these changes
-- Double-check bpm calculation:  The interval at which the color changes is not correct.
+- **RESOLVED 11/10**  Double-check bpm calculation:  The interval at which the color changes is not correct.
 - bpm calculation needs to change as the tempo is raised/lowered.
+
+
+11/9/2020
+
+- bpm calcualtion is fixed through setBpm() 
+    ...still needs to update in real time.
+
+-startStopButton() 
+    - calls start() & stop()
+        - stop() calls clearInterval, but a value remains - WHY:  **RESOLVED:  NEEDED DIFFERENT CONDITION
+                                                                    IN if STATEMENT.  USED boolean INSTEAD OF 
+                                                                    if (interval).
+                                                                
+- need to fix rate of color change - does not reflect tempo.                                                            
