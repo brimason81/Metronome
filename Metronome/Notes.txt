@@ -23,4 +23,16 @@ TO DO:
                                                                     IN if STATEMENT.  USED boolean INSTEAD OF 
                                                                     if (interval).
                                                                 
-- need to fix rate of color change - does not reflect tempo.                                                            
+- **RESOLVED** need to fix rate of color change - does not reflect tempo.                                                            
+
+11/13/2020
+- Created AudioContext with Web Audio API - NOT WORKING!
+    - Wrote code to import sound from index.html
+    - Created function for controlling sound:  play() & pause()
+    - Need sound to sound test all of this!
+    - Find icon to use for play/pause
+
+11/19/2020
+- AudioContext working, sort of:
+    - clicks are sounding, but are interval is irregular, and seems a bit random.
+    - WARNING:  AudioContext was not allowed to start...
